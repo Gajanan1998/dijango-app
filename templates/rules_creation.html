@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <!-- Page Title -->
+    <title>Rules Creation</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.png' %}" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;ampdisplay=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/materialdesignicons.css' %}" />
+
+    <!-- Menu waves for no-customizer fix -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/node-waves/node-waves.css' %}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/typeahead-js/typeahead.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/bs-stepper/bs-stepper.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/bootstrap-select/bootstrap-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/@form-validation/umd/styles/index.min.css' %}" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/template-customizer.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+</head>
+
+<body>
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar  ">
+    <div class="layout-container">
+        <!-- Menu -->
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+            <div class="app-brand demo ">
+                <a href="Dashboard.html" class="app-brand-link">
+            <span class="app-brand-logo demo me-1">
+              <img class="" src="{% static 'assets/img/logo/img-logo.png' %}" alt="Logo">
+            </span>
+                    <span class="app-brand-text demo menu-text fw-semibold ms-2"></span>
+                </a>
+
+                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                    <i class="mdi menu-toggle-icon d-xl-block align-middle mdi-20px"></i>
+                </a>
+            </div>
+
+            <div class="menu-inner-shadow"></div>
+
+
+            <ul class="menu-inner py-1">
+                <li class="menu-header fw-medium">
+                    <span class="menu-header-text">Navigations</span>
+                </li>
+                <li class="menu-item active">
+                    <a href="/dashboard" class="menu-link">
+                        <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
+                        <div data-i18n="Email">Dashboard</div>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons mdi mdi-bank-outline"></i>
+                        <div data-i18n="Chat">Reports</div>
+                    </a>
+                    <ul id="reportsAccordion" class="menu-sub" style="display: none;">
+                        <li class="menu-item">
+                            <a href="Issuer.html" class="menu-link">
+                                <div data-i18n="Issuer Report">Merchant Profile</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Acquirer.html" class="menu-link">
+                                <div data-i18n="Acquirer Report">Account Profile</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="transactionReport/" class="menu-link">
+                                <div data-i18n="Transaction Report">Transaction Report</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+
+            <!-- Navbar -->
+            <nav
+                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                        <i class="mdi mdi-menu mdi-24px"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <h4 class="my-1">Fraud Risk Management</h4>
+
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <!-- Language -->
+                        <li class="nav-item dropdown-language dropdown me-1 me-xl-0">
+                            <a class="nav-link btn btn-text-secondary rounded-pill btn-icon dropdown-toggle hide-arrow waves-effect waves-light"
+                               href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <i class="mdi mdi-translate mdi-24px"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end py-2">
+                                <li>
+                                    <a class="dropdown-item waves-effect active" href="javascript:void(0);" data-language="en"
+                                       data-text-direction="ltr">
+                                        <span class="align-middle">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-language="fr"
+                                       data-text-direction="ltr">
+                                        <span class="align-middle">French</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-language="ar"
+                                       data-text-direction="rtl">
+                                        <span class="align-middle">Arabic</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-language="de"
+                                       data-text-direction="ltr">
+                                        <span class="align-middle">German</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ Language -->
+
+                        <!-- Style Switcher -->
+                        <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+                            <a class="nav-link btn btn-text-secondary rounded-pill btn-icon dropdown-toggle hide-arrow waves-effect waves-light"
+                               href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <i class="mdi mdi-24px mdi-weather-sunny"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-theme="light">
+                                        <span class="align-middle"><i class="mdi mdi-weather-sunny me-2"></i>Light</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-theme="dark">
+                                        <span class="align-middle"><i class="mdi mdi-weather-night me-2"></i>Dark</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item waves-effect" href="javascript:void(0);" data-theme="system">
+                                        <span class="align-middle"><i class="mdi mdi-monitor me-2"></i>System</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- / Style Switcher-->
+                        </li>
+                        <!-- User -->
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="{% static 'assets/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle">
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
+                                <li>
+                                    <a class="dropdown-item pb-2 mb-1" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0 me-2 pe-1">
+                                                <div class="avatar avatar-online">
+                                                    <img src="{% static 'assets/img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle">
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0">Admin</h6>
+                                                <small class="text-muted">Admin</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider my-1"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-account-outline me-1 mdi-20px"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-cog-outline me-1 mdi-20px"></i>
+                                        <span class="align-middle">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider my-1"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/account/login/">
+                                        <i class="mdi mdi-power me-1 mdi-20px"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ User -->
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+                <div class="row gy-3">
+                    <!-- Breadcrumb start here -->
+                    <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
+
+                        <div class="d-flex flex-column justify-content-center">
+                            <h4 class="my-1"><span class="text-muted fw-light"><i
+                                    class="menu-icon tf-icons mdi mdi-home-outline"></i>/</span> Create a Rule!</h4>
+                        </div>
+                    </div>
+                </div>
+                <form method="POST" action="{% url 'rules_creation' %}">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationServer01">Rule name</label>
+                            <input type="text" class="form-control" id="ruleName" name="ruleName" placeholder="Rule name" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationServer02">Rule Details</label>
+                            <input type="text" class="form-control" id="ruleDetails" name="ruleDetails" placeholder="Rule Details" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationServerUsername">Rule Description</label>
+                            <div class="input-group">
+                                <textarea class="form-control" id="ruleDesc" name="ruleDesc" placeholder="Rule Description" aria-describedby="inputGroupPrepend3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="validationServer03">Rule Status</label>
+                            <select class="form-control" id="ruleStatus" name="ruleStatus" required>
+                                <option value="Activate">Activate</option>
+                                <option value="Deactivate">Deactivate</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer04">Rule Start Date</label>
+                            <input type="datetime-local" class="form-control" id="ruleCreatedDate" name="ruleCreatedDate" placeholder="Rule Created Date" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer05">Rule Expiry Date</label>
+                            <input type="datetime-local" class="form-control" id="ruleExpiryDate" name="ruleExpiryDate" placeholder="Rule Expiry Date" required>
+                        </div>
+                    </div>
+                    <!-- Display error message if exists -->
+                    {% if error_message %}
+                    <div style="color: red;">
+                        <strong>Error:</strong> {{ error_message }}
+                    </div>
+                    {% endif %}
+                    <button class="btn btn-primary" type="submit">Enter!</button>
+                </form>
+            </div>
+            <!-- / Content -->
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+        var accordion = document.getElementById('reportsAccordion');
+        if (accordion.style.display === 'none' || accordion.style.display === '') {
+          accordion.style.display = 'block';
+        } else {
+          accordion.style.display = 'none';
+        }
+      });
+    });
+
+</script>
+</html>
